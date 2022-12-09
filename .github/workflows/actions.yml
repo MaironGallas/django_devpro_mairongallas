@@ -13,14 +13,23 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
-      
+                  
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -q pipenv
           pipenv sync -d
           cp contrib/env-sample .env
-
+        
+      - uses: actions/postgresql@v1
+        with:
+          # O nome da imagem do Docker que será usada
+          image: postgres:11
+          # As credenciais de acesso ao banco de dados
+          username: postgres
+          password: postgres
+          database: testdb
+          
       - name: Tests with pytest
         run: |
           pipenv run pytest
