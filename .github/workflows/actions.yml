@@ -6,6 +6,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
+    services:
+      postgres:
+        image: postgres:9.5
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: [ '5432:5432' ]
+        
     steps:
       - uses: actions/checkout@v2
       
@@ -20,16 +29,7 @@ jobs:
           pip install -q pipenv
           pipenv sync -d
           cp contrib/env-sample .env
-        
-      - uses: actions/postgresql@v1
-        with:
-          # O nome da imagem do Docker que será usada
-          image: postgres:11
-          # As credenciais de acesso ao banco de dados
-          username: postgres
-          password: postgres
-          database: testdb
-          
+               
       - name: Tests with pytest
         run: |
           pipenv run pytest
