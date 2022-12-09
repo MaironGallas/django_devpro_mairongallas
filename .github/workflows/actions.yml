@@ -1,0 +1,25 @@
+name: Curso Django Mairon
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -q pipenv
+          pipenv sync -d
+      
+      - name: Tests with pytest
+        run: |
+          pipenv run pytest
