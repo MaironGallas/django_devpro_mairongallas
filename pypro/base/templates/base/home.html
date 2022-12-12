@@ -1,16 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 4, from LayoutIt!</title>
+    <title>Python Pro</title>
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
+    <meta name="description" content="Página do curso Python Pro">
+    <meta name="author" content="Mairon Gallas!">
+	<link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}"/>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 	<script src="{% static 'js/jquery.min.js' %}"></script>
@@ -18,70 +18,45 @@
     <script src="{% static 'js/scripts.js' %}"></script>
 
   </head>
-  <body>
 
+  <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="{% url 'base:home' %}">Python Pro</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
-</nav>
-    <div class="container-fluid">
+  </nav>
+
+    <div class="container">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="jumbotron">
 				<h2>
-					Hello, world!
+					Curso de Python com Luciano Ramalho
 				</h2>
 				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
+					Confira em breve mais informações sobre o curso que será ministrado pelo autor do livro
+					<a href="https://www.amazon.com.br/Fluent-Python-Luciano-Ramalho/dp/1491946008/ref=asc_df_1491946008/?tag=googleshopp00-20&linkCode=df0&hvadid=379726160779&hvpos=&hvnetw=g&hvrand=6465253262531834748&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102559&hvtargid=pla-436375537383&psc=1" taget="_blank" > Python Fluente</a>
 				</p>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card">
 						<h5 class="card-header">
-							Card title
+							Mais detalhes sobre o instrutor
 						</h5>
 						<div class="card-body">
 							<p class="card-text">
-								Card content
+								<img src="{% static 'img/luciano_ramalho.jpg' %}" alt="Foto de Luciona Ramalho" class="img-thumbnail float-left mr-3"/>
+								Estamos entusiasmados em anunciar o nosso novo curso online de Python! Com este curso, você poderá aprender tudo o que precisa para começar a trabalhar com o Python, desde os fundamentos da linguagem até técnicas avançadas de programação.
+								Nosso curso é projetado para ser acessível para iniciantes, mas também oferece desafios e conteúdo avançado para aqueles que já têm alguma experiência em programação. Nossa equipe de instrutores altamente qualificados está sempre disponível para responder perguntas e fornecer feedback valioso.
+								Além disso, ao completar o curso, você receberá um certificado reconhecido que pode ajudá-lo a se destacar no mercado de trabalho. Inscreva-se agora e comece a sua jornada de aprendizado de Python hoje mesmo!
 							</p>
-						</div>
-						<div class="card-footer">
-							Card footer
 						</div>
 					</div>
 				</div>
@@ -90,5 +65,30 @@
 	</div>
 </div>
 
-  </body>
+<footer class="main-footer mt-5 pt-4 text-light">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h3> Entre em Contato</h3>
+				<address>
+					+55 55 9 9999-9999
+					<br/>
+					<a href="mailto:ramalho@python.pro.br" class="text-light">ramalho@python.pro.br</a>
+				</address>
+			</div>
+		</div>
+	</div>
+	<div class="rights pb-4 text-light">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					{% now 'Y'%} Python Pro. Todos os direitos reservados.
+				</div>
+			</div>
+		</div>
+	</div>
+
+</footer>
+
+</body>
 </html>
