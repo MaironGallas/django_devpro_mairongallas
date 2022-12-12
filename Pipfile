@@ -9,6 +9,7 @@ python-decouple = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
 collectfast = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 pytest = "*"
